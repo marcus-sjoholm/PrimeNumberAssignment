@@ -22,7 +22,7 @@ namespace PrimenumberAssignment
         }
 
         /// <summary>
-        /// Possibility for user to reset the list
+        /// Gives user the ability to clear the list of it´s content
         /// </summary>
         public static void ClearListOfContent()
         {
