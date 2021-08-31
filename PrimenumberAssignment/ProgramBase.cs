@@ -377,6 +377,10 @@ namespace PrimenumberAssignment
             NewLineInConsole();
         }
 
+        /// <summary>
+        /// Display in console that the user
+        /// didn´t input a number
+        /// </summary>
         public static void WrongInputMustBeNumber()
         {
             Console.Clear();
