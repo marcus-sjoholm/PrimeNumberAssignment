@@ -98,6 +98,7 @@ namespace PrimenumberAssignment
         /// </summary>
         public static void ListIsEmpty()
         {
+            NewLineInConsole();
             Console.WriteLine("The list is empty");
         }
 
@@ -170,29 +171,39 @@ namespace PrimenumberAssignment
         /// <summary>
         /// Adds one to highest known prime number and when the program finds next primenumber it
         /// stops and adds it to the list of saved prime numbers
+        /// Will display an error if there is no prime numbers saved in list already
         /// </summary>
         public static void NextPrimeNumber()
         {
-            var highest = savedPrimeNumbers[^1] + 1;
-
-            while (true)
+            switch (savedPrimeNumbers.Count)
             {
-                try
-                {
-                    if (PrimeChecker(highest))
+                case 0:
+                    break;
+
+                default:
                     {
-                        SavePrimenumbers(highest);
-                        return;
+                        var highest = savedPrimeNumbers[^1] + 1;
+
+                        while (true)
+                        {
+                            try
+                            {
+                                if (PrimeChecker(highest))
+                                {
+                                    SavePrimenumbers(highest);
+                                    return;
+                                }
+                                else
+                                {
+                                    highest++;
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                ExceptionError(ex);
+                            }
+                        }
                     }
-                    else
-                    {
-                        highest++;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    ExceptionError(ex);
-                }
             }
         }
 
