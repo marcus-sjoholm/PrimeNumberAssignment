@@ -22,6 +22,37 @@ namespace PrimenumberAssignment
         }
 
         /// <summary>
+        /// Possibility for user to reset the list
+        /// </summary>
+        public static void ClearListOfContent()
+        {
+            try
+            {
+                switch (savedPrimeNumbers.Count)
+                {
+                    case 0:
+                        {
+                            Console.WriteLine("List is already empty");
+                            NewLineInConsole();
+                            break;
+                        }
+
+                    default:
+                        {
+                            savedPrimeNumbers.Clear();
+                            Console.WriteLine("All saved prime numbers have been removed, list is now empty");
+                            NewLineInConsole();
+                            break;
+                        }
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionError(ex);
+            }
+        }
+
+        /// <summary>
         /// Visual confirmation that the program is stopped
         /// </summary>
         public static void ClosingMessage()
@@ -106,15 +137,6 @@ namespace PrimenumberAssignment
         }
 
         /// <summary>
-        /// Allows user to reset the list if for some reason necessary
-        /// </summary>
-        public static void ListSetToZero()
-        {
-            Console.WriteLine("All saved prime numbers have been removed, list is now empty");
-            NewLineInConsole();
-        }
-
-        /// <summary>
         /// Checks if user input a number, will give an error message if user write anything else
         /// than what menu offers
         /// </summary>
@@ -169,7 +191,7 @@ namespace PrimenumberAssignment
             Console.WriteLine("Enter '1' to check if a number is a prime number " +
                             "\nEnter '2' to see stored prime numbers " +
                             "\nEnter '3' Show next prime number " +
-                            "\nEnter '4' to clear list of saved prime numbers" +
+                            "\nEnter '4' to empty the list of saved prime numbers" +
                             "\nEnter '5' to exit program");
         }
 
@@ -282,8 +304,7 @@ namespace PrimenumberAssignment
                         }
                     case "4":
                         {
-                            savedPrimeNumbers.Clear();
-                            ListSetToZero();
+                            ClearListOfContent();
                             break;
                         }
                     case "5":
