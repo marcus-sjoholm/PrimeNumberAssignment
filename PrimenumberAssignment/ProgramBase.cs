@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// Marcus Sjöholm
+/// </summary>
 namespace PrimenumberAssignment
 {
     internal static class PrimeProgram
@@ -11,7 +14,9 @@ namespace PrimenumberAssignment
         public static List<int> savedPrimeNumbers = new List<int>();
 
         /// <summary>
-        /// Asks user to input an integer, then sending the number to be evaluated
+        /// Asks user to input an integer,
+        /// then sending the number to be evaluated -
+        /// if it´s a prime or not
         /// </summary>
         public static void AddPotentialPrimeNumber()
         {
@@ -85,15 +90,16 @@ namespace PrimenumberAssignment
         /// <summary>
         /// Show exception error from try-catch
         /// </summary>
-        /// <param name="ex"></param>
+        /// <param name="ex">Exception variable</param>
         public static void ExceptionError(Exception ex)
         {
             Console.WriteLine("Error: " + ex);
         }
 
         /// <summary>
-        /// After checking if users input is prime or not, it will either save the number to the
-        /// list or tell user it´s not a prime and enter another number
+        /// After checking if users input is prime or not,
+        /// it will either save the number to the list
+        /// or tell user it´s not a prime and enter another number
         /// </summary>
         /// <param name="num">Number input from user</param>
         /// <param name="isPrime">Is the number prime? True or False</param>
@@ -137,7 +143,8 @@ namespace PrimenumberAssignment
         }
 
         /// <summary>
-        /// Checks if user input a number, will give an error message if user write anything else
+        /// Checks if user input a number,
+        /// will give an error message if user write anything else
         /// than what menu offers
         /// </summary>
         public static void LoopMenuOptions()
@@ -328,8 +335,8 @@ namespace PrimenumberAssignment
         }
 
         /// <summary>
-        /// Saves prime numbers to list, if the number already exsists it will not be added again to
-        /// remove redundancy, also sorts the prime numbers incrementally
+        /// Saves prime numbers to list, if the number already exsists it will not be added again
+        /// to remove redundancy, it will also sorts the prime numbers incrementally
         /// </summary>
         /// <param name="num">Number input from user</param>
         public static void SavePrimenumbers(int num)

@@ -1,5 +1,8 @@
 ﻿namespace PrimenumberAssignment
 {
+    /// <summary>
+    /// Marcus Sjöholm
+    /// </summary>
     internal static class Program
     {
         /// <summary>
