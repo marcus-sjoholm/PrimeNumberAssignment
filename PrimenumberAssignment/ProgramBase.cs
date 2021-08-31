@@ -21,6 +21,9 @@ namespace PrimenumberAssignment
             IsNumberPrime(num, isPrime);
         }
 
+        /// <summary>
+        /// Visual confirmation that the program is stopped
+        /// </summary>
         public static void ClosingMessage()
         {
             Console.WriteLine("Program is closing");
@@ -103,6 +106,15 @@ namespace PrimenumberAssignment
         }
 
         /// <summary>
+        /// Allows user to reset the list if for some reason necessary
+        /// </summary>
+        public static void ListSetToZero()
+        {
+            Console.WriteLine("All saved prime numbers have been removed, list is now empty");
+            NewLineInConsole();
+        }
+
+        /// <summary>
         /// Checks if user input a number, will give an error message if user write anything else
         /// than what menu offers
         /// </summary>
@@ -157,7 +169,8 @@ namespace PrimenumberAssignment
             Console.WriteLine("Enter '1' to check if a number is a prime number " +
                             "\nEnter '2' to see stored prime numbers " +
                             "\nEnter '3' Show next prime number " +
-                            "\nEnter '4' to exit program");
+                            "\nEnter '4' to clear list of saved prime numbers" +
+                            "\nEnter '5' to exit program");
         }
 
         /// <summary>
@@ -267,8 +280,13 @@ namespace PrimenumberAssignment
                             NewLineInConsole();
                             break;
                         }
-
                     case "4":
+                        {
+                            savedPrimeNumbers.Clear();
+                            ListSetToZero();
+                            break;
+                        }
+                    case "5":
                         {
                             ClosingMessage();
                             Environment.Exit(1);
