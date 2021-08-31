@@ -151,7 +151,7 @@ namespace PrimenumberAssignment
         public static void ListIsEmpty()
         {
             NewLineInConsole();
-            Console.WriteLine("The list is empty");
+            Console.WriteLine("Error: The list is empty");
         }
 
         /// <summary>
@@ -373,14 +373,14 @@ namespace PrimenumberAssignment
         /// </summary>
         public static void WrongInput()
         {
-            Console.WriteLine("Wrong input, please choose a number between 1-5");
+            Console.WriteLine("Error: Wrong input, please choose a number between 1-5");
             NewLineInConsole();
         }
 
         public static void WrongInputMustBeNumber()
         {
             Console.Clear();
-            Console.WriteLine("Input is not a number, please try again:");
+            Console.WriteLine("Error: Input is not a number");
             NewLineInConsole();
         }
     }
