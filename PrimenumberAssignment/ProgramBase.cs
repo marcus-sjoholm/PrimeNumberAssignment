@@ -20,10 +20,22 @@ namespace PrimenumberAssignment
         /// </summary>
         public static void AddPotentialPrimeNumber()
         {
-            Console.WriteLine("Enter a number: ");
-            var num = Convert.ToInt32(Console.ReadLine());
-            bool isPrime = PrimeChecker(num);
-            IsNumberPrime(num, isPrime);
+            bool valid = false;
+            while (!valid)
+            {
+                Console.WriteLine("Enter a number: ");
+                string num = Console.ReadLine();
+                if (int.TryParse(num, out int number))
+                {
+                    bool isPrime = PrimeChecker(Convert.ToInt32(num));
+                    IsNumberPrime(number, isPrime);
+                    valid = true;
+                }
+                else
+                {
+                    WrongInputMustBeNumber();
+                }
+            }
         }
 
         /// <summary>
@@ -45,7 +57,7 @@ namespace PrimenumberAssignment
                     default:
                         {
                             savedPrimeNumbers.Clear();
-                            Console.WriteLine("All saved prime numbers have been removed, list is now empty");
+                            Console.WriteLine("All saved prime numbers have been removed, the list is now empty");
                             NewLineInConsole();
                             break;
                         }
@@ -361,7 +373,14 @@ namespace PrimenumberAssignment
         /// </summary>
         public static void WrongInput()
         {
-            Console.WriteLine("Wrong input, please choose a number between 1-4");
+            Console.WriteLine("Wrong input, please choose a number between 1-5");
+            NewLineInConsole();
+        }
+
+        public static void WrongInputMustBeNumber()
+        {
+            Console.Clear();
+            Console.WriteLine("Input is not a number, please try again:");
             NewLineInConsole();
         }
     }
